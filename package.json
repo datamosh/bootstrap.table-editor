@@ -1,0 +1,22 @@
+{
+  "name": "bootstrap.table-editor",
+  "version": "0.1.0",
+  "description": "Editable table with jQuery and Bootstrap",
+  "main": "src/bootstrap.table-editor.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datamosh/bootstrap.table-editor.git"
+  },
+  "keywords": [
+    "table",
+    "editable",
+    "bootstrap",
+    "jquery"
+  ],
+  "author": "Datamosh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/datamosh/bootstrap.table-editor/issues"
+  },
+  "homepage": "https://github.com/datamosh/bootstrap.table-editor#readme"
+}

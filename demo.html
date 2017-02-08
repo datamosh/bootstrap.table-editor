@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Bootstrap Table Editor</title>
+		<!-- Requirement: jQuery -->
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<!-- Requirement: Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		<!-- Table editor -->
+		<link rel="stylesheet" href="src/bootstrap.table-editor.css">
+		<script src="src/bootstrap.table-editor.js"></script>
+		<style>
+			.table-editable td {
+				position: relative;
+				height: 46px;
+			}
+
+			.table-editable td.editing {
+				min-width: 96px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Bootstrap Table Editor</h1>
+			<p class="lead">Click on table cells to edit and use right click to open context menu.</p>
+
+			<p>Table #1</p>
+			<table id="table1" class="table table-bordered">
+				<tbody>
+					<tr>
+						<td>A</td>
+						<td>B</td>
+						<td>C</td>
+					</tr>
+					<tr>
+						<td>D</td>
+						<td>E</td>
+						<td>F</td>
+					</tr>
+					<tr>
+						<td>G</td>
+						<td>H</td>
+						<td>I</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>Table #2</p>
+			<table id="table2" class="table table-bordered"></table>
+
+			<button id="json" type="button" class="btn btn-primary">Get JSON</button>
+		</div>
+
+		<script>
+		var table1, table2;
+			$(function() {
+				// Create editor
+				$('#table1, #table2').tableEditor({
+					//lang: 'es',
+					onChange: function(value, cell, table, tableEditor) {
+						console.log(value, cell, table, tableEditor)
+					}
+				})
+
+				// Set JSON
+				$('#table2').tableEditor('json', [
+					[1,2,3,4,5],
+					[6,7,8,9,0]
+				])
+
+				// Get JSON
+				$('#json').on('click', function() {
+					console.log('Table #1 JSON:', $('#table1').tableEditor('json'))
+					console.log('Table #2 JSON:', $('#table2').tableEditor('json'))
+				})
+			})
+		</script>
+	</body>
+</html>
