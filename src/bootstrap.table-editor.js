@@ -8,7 +8,14 @@ jQuery.tableEditor = {
 			remove_row: 'Remove row',
 			remove_column: 'Remove column'
 		},
-
+		nl: {
+			insert_row_above: 'Rij invoegen boven',
+			insert_row_below: 'Rij invoegen beneden',
+			insert_column_on_the_left: 'Kolom invoegen links',
+			insert_column_on_the_right: 'Kolom invoegen rechts',
+			remove_row: 'Rij verwijderen',
+			remove_column: 'Kolom verwijderen'
+        },
 		es: {
 			insert_row_above: 'Añadir fila arriba',
 			insert_row_below: 'Añadir fila debajo',
